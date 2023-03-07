@@ -1,1 +1,4 @@
 # Tarefa-optativa---BBDD-e-PHP-Entrega
+
+El archivo en cuestion se llama "frikismo" dentro estan los codigos de creacion sql, los insert, los "mostrar" etc...  Cualquier duda consultar por moodle con Joam, Pablo o Daniel García.   A la hora de dar  de alta las diferentes tablas (compañia, categoria, juegos, reviews creadores) mirar los tipos de datos en el script de creacion de la base.  Una vez en el menu crear la base de datos en el boton "Crearbase de datos". Se puede borrar en el boton "Borrar base de datos".  Despues se pueden insertar datos (cuidado con el tipo de datos)  Para ver las filas y columnas clickar en "Mostrar datos".
+Los prepared statements solo se encuentran en la primera tabla (categorias) y no en las demas por falta de tiempo, en caso de introducir tipos de dato incorrectos saltará un error de phpmyadmin o continuara dejando un dato por defecto(como la fecha 0000-00-00 en el caso de las fechas)
