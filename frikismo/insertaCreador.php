@@ -9,7 +9,7 @@
 	<?php
 		include './database/conector.php';
 
-		// Recollo os datos enviados a través do formulario    
+
 		$id = $_POST['id'];
 		$nombre = $_POST['nombre'];
                 $nickname = $_POST['nickname'];
@@ -23,7 +23,6 @@
                 
                 
 
-		// Inserto os datos na BBDD
 	    	$insert_creador = "INSERT INTO creadores_de_contenido 
 	  		(id, nombre, nickname, pais_de_origen, pais_de_residencia, plataformas, Enlace, Nazi, Funado)
 			VALUES($id, '$nombre', '$nickname', '$pais_de_origen', '$pais_de_residencia', '$plataformas', '$enlace', $nazi, $funado);";
