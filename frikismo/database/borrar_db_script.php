@@ -12,10 +12,8 @@
 
 		echo "<h1>Script que borra táboas e a BBDD</h1>";	    
 		echo '<div style="margin-top: 25px; margin: 0 25%;">';		
-	    //Conexión coa BBDD
 	    $conector = mysqli_connect(HOST, USER, PASSWORD) or die("Non se puido abrir a conexión");
 
-	    //Se hai conexión lanzo queries de borrado
 	    if (!mysqli_connect_errno() && $conector) {
 	        echo "Conexión creada correctamente.<br>";
 			mysqli_query($conector,'DROP TABLE IF EXISTS '. NOMBRE_BBDD .'.alumnos') or die("Non se puido borrar a táboa alumno");
