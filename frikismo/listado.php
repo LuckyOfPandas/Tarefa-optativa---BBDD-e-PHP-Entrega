@@ -25,9 +25,7 @@
 		echo "No se pudo conectar a la base de datos para consultar datos";
 	}
 	echo '</div>';
-	/* Mejor no ponerlo
-	include_once('footer.php');
-	*/
+
 
 	 ?>
 	<br><br><br><br><br>
