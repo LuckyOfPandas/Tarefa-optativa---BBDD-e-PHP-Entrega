@@ -13,15 +13,12 @@
 		echo "<h1>Script que crea BBDD  y tablas</h1>";
 		echo '<div style="margin-top: 25px; margin: 0 25%;">';
 
-	    //conexión coa BBDD
 	    $conector = mysqli_connect(HOST, USER, PASSWORD) or die("No se pudo conectar");
 
-	    //Se hai conexión lanzo queries de creación de bases de datos e táboas
 
 	    if (!mysqli_connect_errno() && $conector) {
 	        echo "Conexión existosa. <br>";
 			
-		//Query para crear la BBDD
 	    $createDatabase = "CREATE DATABASE ".NOMBRE_BBDD;
 
 		if (mysqli_query($conector, $createDatabase)) {
@@ -32,15 +29,12 @@
 		}
 	        mysqli_select_db($conector, NOMBRE_BBDD);
 
-	    // Compruebo que estou conectado á BBDD 
 	    if ($result = mysqli_query($conector, "SELECT DATABASE()")) {
 	        $row = mysqli_fetch_row($result);
 	        echo "Conectado a BBDD: " . $row[0] . "<br><br>";
 	        mysqli_free_result($result);
 	    }
 
-	    // Creo as tablas
-		//Tabla categorias primero, para poder después establecer la relación Foreign Key correctamente:
     		$tabla_categorias = "CREATE TABLE IF NOT EXISTS categorias (
                                     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                     nombre VARCHAR(45) NOT NULL,
@@ -57,7 +51,6 @@
 		}
 		
 
-		// Táboa compañias
     		$tabla_compañias = "CREATE TABLE IF NOT EXISTS compañias (
                                     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                     nombre VARCHAR(45) NOT NULL,
@@ -74,7 +67,6 @@
 		    echo "No fue posible crear la tabla o ya existe en la BBDD.<br>". " Error: " . mysqli_error($conector)."<br/>";
 		}
 
-		// Táboa para as creadores de contenido
     		$tabla_creadores = "CREATE TABLE IF NOT EXISTS creadores_de_contenido (
                                     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                     nombre VARCHAR(45) NOT NULL,
@@ -97,7 +89,6 @@
 		}
 
 
-		// Tabla para las juegos
                 $tabla_juegos   = "CREATE TABLE IF NOT EXISTS juegos (
                                     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                     nombre VARCHAR(45) NOT NULL,
@@ -129,7 +120,6 @@
 		}
 
                 
-                // Tabla para las reviews
     		$tabla_reviews = "CREATE TABLE IF NOT EXISTS reviews (
                                     id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
                                     Periodista VARCHAR(45) NOT NULL,
