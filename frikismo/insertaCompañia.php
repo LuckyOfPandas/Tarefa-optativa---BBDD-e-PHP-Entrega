@@ -9,14 +9,12 @@
 	<?php
 		include './database/conector.php';
 
-		// Recollo os datos enviados a través do formulario    
 		$id = $_POST['id'];
 		$nombre = $_POST['nombre'];
 		$fecha = $_POST['fecha'];
                 $networth = $_POST['networth'];
                 $director = $_POST['director'];
 
-		// Inserto os datos na BBDD
 	    	$insert_compañia = "INSERT INTO compañias 
 	  		(id, nombre, Fecha_de_fundacion, Networth, Director)
 			VALUES($id, '$nombre', $fecha, $networth, '$director');";
